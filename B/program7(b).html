@@ -9,13 +9,13 @@
         if (password.length < 6) alert("password must be 6 characters");
       }
 
-      // function registerEvents() {
+      function registerEvents() {
         var myform = document.getElementById("myform");
         myform.addEventListener("submit", Validate, false);
-      // }
+      }
     </script>
   </head>
-  <body >
+  <body onload="registerEvents()">
     <form id="myform">
       <label> Enter User Name:</label>
       <input type="text" id="name" /><br /><br />
