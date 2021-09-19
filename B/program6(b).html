@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Dynamic color Changes</title>
+    <script type="text/javascript">
+      function changecolor(whatToChange, newColor) {
+        if (whatToChange == "background")
+          document.body.style.backgroundColor = newColor;
+        else document.body.style.color = newColor;
+      }
+    </script>
+  </head>
+  <body>
+    <center><h1>Dynamically Changing Colors</h1></center>
+    <p>
+      this is simple paragraph. The color of this will be changed dynamically
+    </p>
+    <br /><br />
+    <form>
+      <label>Enter foreground color</label>
+      <input
+        type="text"
+        size="10"
+        onchange="changecolor('foreground',this.value)"
+      /><br /><br />
+      <label>Enter background color</label>
+      <input
+        type="text"
+        size="10"
+        onchange="changecolor('background',this.value)"
+      /><br /><br />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function display() {
+        var name = document.getElementById("name").value;
+        var cl = document.getElementById("cla").value;
+        var sub1 = parseInt(document.getElementById("sub1").value);
+        var sub2 = parseInt(document.getElementById("sub2").value);
+        var sub3 = parseInt(document.getElementById("sub3").value);
+        var total = parseInt(sub1 + sub2 + sub3);
+        var avg = parseFloat(total / 3);
+        var result, grade;
+        if (avg > 60) {
+          grade = "A";
+          result = "Distinction";
+        } else if (avg < 60 && avg > 50) {
+          grade = "B";
+          result = "Second class";
+        } else if (avg < 50 && avg > 40) {
+          grade = "C";
+          result = "Third class";
+        } else {
+          grade = "D";
+          result = "Fail";
+        }
+        document.write("<body bgcolor='pink'>");
+        document.write("<h2> Student Marks Report </h2>");
+        document.write("Name: " + name);
+        document.write("<br>");
+        document.write("Class: " + cl);
+        document.write("<br>");
+        document.write("Subject 1: " + sub1);
+        document.write("<br>");
+        document.write("Subject 2: " + sub2);
+        document.write("<br>");
+        document.write("Subject 3: " + sub3);
+        document.write("<br>");
+        document.write("Total: " + total);
+        document.write("<br>");
+        document.write("Average: " + avg);
+        document.write("<br>");
+        document.write("Grade: " + result);
+      }
+    </script>
+  </head>
+  <body bgcolor="cyan">
+    <form>
+      <h1>Student Data Form</h1>
+      Name:<input type="text" id="name" /><br />
+      Class:<input type="text" id="cla" /><br />
+      Subject1:<input type="text" id="sub1" /><br />
+      Subject2:<input type="text" id="sub2" /><br />
+      Subject3:<input type="text" id="sub3" /><br />
+      <input type="button" value="check" onclick="display()" /><br />
+    </form>
+  </body>
+</html>

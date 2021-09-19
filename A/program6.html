@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>Display Date</title>
+    <script type="text/javascript">
+      function display() {
+        var dateObj = new Date();
+        var currDate = dateObj.getDate();
+        var month = dateObj.getMonth();
+        var currYear = dateObj.getFullYear();
+        var year = "Two Thousand and Fourteen";
+        var days = [
+          "First",
+          "Second",
+          "Third",
+          "Fourth",
+          "Fifth",
+          "Sixth",
+          "Seventh",
+          "Eigth",
+          "Ninth",
+          "Tenth",
+          "Eleventh",
+          "Twelfth",
+          "Thirteenth",
+          "Fourteenth",
+          "fifteenth",
+          "Sixteenth",
+          "Seventeenth",
+          "Eighteenth",
+          "Nineteenth",
+          "Twentyeth",
+          "Twenty First",
+          "Twenty Second",
+          "Twenty Third",
+          "Twenty Fourth",
+          "Twenty Fifth",
+          "Twenty Sixth",
+          "Twenty Seventh",
+          "Twenty Nine",
+          "Thirtyeth",
+          "Thirty First",
+        ];
+        var months = [
+          "January",
+          "Febraury",
+          "March",
+          "April",
+          "May",
+          "June",
+          "july",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        if (currYear == 2014)
+          alert(
+            "Today date is :: " +
+              days[currDate] +
+              " " +
+              months[month] +
+              " " +
+              year
+          );
+        else
+          alert(
+            "Today date is :: " +
+              days[currDate] +
+              " " +
+              months[month] +
+              " " +
+              currYear
+          );
+      }
+    </script>
+  </head>
+  <body bgcolor="cyan">
+    <form>
+      <input type="button" value="Click Here" onclick="display()" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>DOM2 event Model</title>
+    <script type="text/javascript">
+      function Validate() {
+        var username = document.getElementById("name").value;
+        var password = document.getElementById("pwdText").value;
+        if (username.length < 8) alert("user name must be 8 characters");
+        if (password.length < 6) alert("password must be 6 characters");
+      }
+
+      // function registerEvents() {
+        var myform = document.getElementById("myform");
+        myform.addEventListener("submit", Validate, false);
+      // }
+    </script>
+  </head>
+  <body >
+    <form id="myform">
+      <label> Enter User Name:</label>
+      <input type="text" id="name" /><br /><br />
+      <label> Enter Password</label>
+      <input type="password" id="pwdText" /><br /><br />
+      <input type="submit" id="submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!--javascript code to display confirm box and alert box-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function myFunction() {
+        alert("Hello! I am an alert box!");
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <p>Click the button to display an alert box.</p>
+      Try it:<input type="button" value="Alert" onclick="myFunction()" />
+    </form>
+
+    <p>Click the button to display a confirm box.</p>
+    <button onclick="myFunction1()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction1() {
+        var txt;
+        var r = confirm("Press a button!");
+        if (r == true) {
+          txt = "You pressed OK!";
+        } else {
+          txt = "You pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+    </script>
+  </body>
+</html>

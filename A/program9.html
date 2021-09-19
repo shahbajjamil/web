@@ -1,0 +1,92 @@
+<html>
+<head>
+<title> MacDonalds Restaurant </title>
+<script text="text/javascript">
+function findCost()
+{
+var major=document.getElementById("major");
+var starters = document.getElementById("starters");
+var soft = document.getElementById("soft");
+var selectedItems="Item\t\t\t Price \n..................\n";
+var totcost=0;
+for(var i=0;i<major.options.length; i++)
+{
+var option = major.options[i];
+if(option.selected==true)
+{
+var price = parseInt(option.value);
+totcost=totcost + price;
+selectedItems=selectedItems+option.text+"\t\t"+price+"\n";
+}
+}
+for(var i=0; i<starters.options.length;i++)
+{
+var option = starters.options[i];
+if(option.selected==true)
+{
+var price = parseInt(option.value);
+totcost=totcost + price;
+selectedItems=selectedItems+option.text+"\t\t"+price+"\n";
+}
+}
+var softdrinkIndex=soft.selectedIndex;
+if(softdrinkIndex!=-1)
+{
+var selectedSoftdrink=soft.options[soft.selectedIndex].text;
+var price = parseInt(soft.options[soft.selectedIndex].value);
+totcost=totcost+price;
+selectedItems=selectedItems+selectedSoftdrink+"\t\t\t"+price+"\n.....................\
+n";
+} 
+selectedItems=selectedItems+"Total cost \t\t" + totcost+"\n...................\n";
+document.getElementById("ordereditems").value=selectedItems; 
+}
+</script>
+</head>
+<body bgcolor=cyan text=blue>
+<h1 align=center> Mc Donald's Restaurant </h1>
+<hr>
+<form name="Menu Form">
+<table border=10 align=center>
+<tr> <th colspan=2 align=center>
+<h2> Items Menu</h2> </th>
+</tr>
+<tr>
+<td> Major Dishes : </td>
+<td> <select id=major size=3 multiple="multiple">
+<option value=100> Vegetable Pulav </option>
+<option value=150> Hyderabadi Biriyani </option>
+<option value=50> Roti with Curry </option>
+</td>
+</tr>
+<tr>
+<td> Starters </td>
+<td> <select id="starters" size=3 multiple="multiple">
+<option value=80> Gobi Manchurian </option>
+<option value=40> Veg Soup </option>
+<option value=30> Masala Papad </option>
+</td>
+</tr>
+<tr>
+<td> Soft Drinks </td>
+<td> <select id="soft" size=1>
+<option value=20> Pepsi </option>
+<option value=30> Coke </option>
+<option value=10>LimeSoda</option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<textarea id="ordereditems" rows=10 cols=40>
+</textarea>
+</td>
+</tr>
+<tr>
+<td> <input type=button value="Find Total Cost" 
+onClick="findCost()"/></td>
+<td> <input type=reset value=clear /></td>
+</tr>
+</table>
+</form>
+</html> 
